@@ -43,9 +43,10 @@ where `$ID` is your subscription id. This will create a resource group named `az
 Third, create a service principal for the resource group:
 
 ```console
-az ad sp create-for-rbac --name "azureml-template" --role contributor \
-                            --scopes /subscriptions/$ID/resourceGroups/azureml-template \
-                            --sdk-auth
+az ad sp create-for-rbac --name "azureml-template" \
+                         --role contributor \
+                         --scopes /subscriptions/$ID/resourceGroups/azureml-template \
+                         --sdk-auth
 ```
 
 Copy the output json, which looks like this:
