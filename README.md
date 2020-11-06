@@ -23,6 +23,44 @@ cd azureml-examples
 pip install --upgrade -r requirements.txt
 ```
 
+## Setup
+
+First, export your subscription id as an environment variable:
+
+```console
+export ID=<your-subscription-id>
+```
+
+Second, create the Azure Resource Group and requires resources:
+
+```console
+python setup-workspace.py --subscription-id $ID
+```
+
+where `$ID` is your subscription id. This will create a resource group named `azureml-template`, a workspace named `default`, and a cluster name `cpu-cluster`. Edit `setup-workspace.py` as needed. If you change the names, ensure you change corresponding names in the `.github/workflow` files.
+
+Third, create a service principal for the resource group:
+
+```console
+az ad sp create-for-rbac --name "azureml-template" --role contributor \
+                            --scopes /subscriptions/$ID/resourceGroups/azureml-template \
+                            --sdk-auth
+```
+
+Copy the output json, which looks like this:
+
+```console
+{
+    "clientId": "<GUID>",
+    "clientSecret": "<GUID>",
+    "subscriptionId": "<GUID>",
+    "tenantId": "<GUID>",
+    (...)
+}
+```
+
+In your GitHub repo, navigate to Settings > Secrets > New Secret. Name the secret `AZ_CREDS` and paste the json output from above.
+
 ## Contents
 
 This example repo is structured for real ML projects. You can utilize the structure for automating the entire ML lifecycle on GitHub using AML.

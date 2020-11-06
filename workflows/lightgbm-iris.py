@@ -1,5 +1,3 @@
-# description: train a lightgbm model on iris data
-
 # imports
 import git
 
@@ -15,18 +13,24 @@ prefix = Path(git.Repo(".", search_parent_directories=True).working_tree_dir)
 
 # training script
 script_dir = prefix.joinpath("code", "train", "lightgbm", "iris")
-script_name = "train.py"
+script_name = "train-advanced.py"
 
 # environment file
 environment_file = prefix.joinpath("environments", "lightgbm.txt")
 
+# dataset
+ds = Dataset.File.from_files()
+
 # azure ml settings
-environment_name = "lightgbm-iris-example"
-experiment_name = "lightgbm-iris-example"
+environment_name = "lightgbm"
+experiment_name = "lightgbm-template-workflow"
 compute_target = "cpu-cluster"
 
 # create environment
 env = Environment.from_pip_requirements(environment_name, environment_file)
+
+# setup arguments
+args = ["--data-dir", ds.as_mount()]
 
 # create job config
 src = ScriptRunConfig(
@@ -38,5 +42,4 @@ src = ScriptRunConfig(
 
 # submit job
 run = Experiment(ws, experiment_name).submit(src)
-print(run)
 run.wait_for_completion(show_output=True)
