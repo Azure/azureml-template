@@ -19,9 +19,8 @@ script_name = "train-advanced.py"
 environment_file = prefix.joinpath("environments", "lightgbm.txt")
 
 # dataset
-# ds = Dataset.File.from_files("https://github.com/Azure/azureml-examples/blob/main/data/raw/iris/iris.csv")
 ds = Dataset.File.from_files(
-    "https://azureopendatastorage.blob.core.windows.net/mlsamples/iris/iris.csv"
+    "https://azuremlexamples.blob.core.windows.net/datasets/iris.csv"
 )
 
 # azure ml settings
