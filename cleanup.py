@@ -10,10 +10,10 @@ args = parser.parse_args()
 # get workspace
 ws = Workspace.from_config(args.config)
 
-# delete all webservices
+# process webservices
 for webservice in ws.webservices:
-    ws.webservices[webservice].delete()
+    pass
 
-# delete some compute targets
+# process compute targets
 for compute_target in ws.compute_targets:
     pass
