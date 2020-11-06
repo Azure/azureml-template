@@ -79,6 +79,8 @@ This example repo is structured for real ML projects. You can utilize the struct
 
 ## GitHub Actions
 
-- `smoke` is used to check code format - modify as needed
-- `run-workflows` runs the ml workflows regularly
-- `cleanup` cleans up resources daily
+Modify all actions and files for your scenario. By default:
+
+- `smoke` is used to check code format
+- `run-workflows` runs the example ml workflow every two hours
+- `cleanup` runs daily and can be used to cleanup AML resources
