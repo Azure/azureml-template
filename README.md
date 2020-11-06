@@ -81,6 +81,6 @@ This example repo is structured for real ML projects. You can utilize the struct
 
 Modify all actions and files for your scenario. By default:
 
-- `smoke` is used to check code format
-- `run-workflows` runs the example ml workflow every two hours
+- `smoke` runs on every PR and push to `main` to check code format
+- `run-workflows` runs the example ml workflow every two hours and push/PR to `main`
 - `cleanup` runs daily and can be used to cleanup AML resources
