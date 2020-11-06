@@ -2,6 +2,7 @@
 
 [![run-workflows-badge](https://github.com/Azure/azureml-template/workflows/run-workflows/badge.svg)](https://github.com/Azure/azureml-template/actions?query=workflow%3Arun-workflows)
 [![cleanup](https://github.com/Azure/azureml-template/workflows/cleanup/badge.svg)](https://github.com/Azure/azureml-template/actions?query=workflow%3Acleanup)
+[![smoke](https://github.com/Azure/azureml-template/workflows/smoke/badge.svg)](https://github.com/Azure/azureml-template/actions?query=workflow%3Asmoke)
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![license: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
 
@@ -75,6 +76,8 @@ This example repo is structured for real ML projects. You can utilize the struct
 |`notebooks`|interactive jupyter notebooks for iterative ML development|
 |`workflows`|AML control plane specification (currently Python scripts) of job(s) to be run|
 
-## Code of Conduct
+## GitHub Actions
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Please see the [code of conduct](CODE_OF_CONDUCT.md) for details.
+- `smoke` is used to check code format - modify as needed
+- `run-workflows` runs the ml workflows regularly
+- `cleanup` cleans up resources daily

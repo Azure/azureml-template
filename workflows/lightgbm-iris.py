@@ -3,7 +3,7 @@ import git
 
 from pathlib import Path
 from azureml.core import Workspace
-from azureml.core import ScriptRunConfig, Experiment, Environment
+from azureml.core import ScriptRunConfig, Experiment, Environment, Dataset
 
 # get workspace
 ws = Workspace.from_config()
@@ -19,7 +19,8 @@ script_name = "train-advanced.py"
 environment_file = prefix.joinpath("environments", "lightgbm.txt")
 
 # dataset
-ds = Dataset.File.from_files()
+#ds = Dataset.File.from_files("https://github.com/Azure/azureml-examples/blob/main/data/raw/iris/iris.csv")
+ds = Dataset.File.from_files("https://azureopendatastorage.blob.core.windows.net/mlsamples/iris/iris.csv")
 
 # azure ml settings
 environment_name = "lightgbm"
