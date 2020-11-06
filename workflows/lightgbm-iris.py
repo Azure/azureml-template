@@ -38,6 +38,7 @@ args = ["--data-dir", ds.as_mount()]
 src = ScriptRunConfig(
     source_directory=script_dir,
     script=script_name,
+    arguments=args,
     environment=env,
     compute_target=compute_target,
 )
