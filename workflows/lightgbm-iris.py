@@ -12,11 +12,11 @@ ws = Workspace.from_config()
 prefix = Path(git.Repo(".", search_parent_directories=True).working_tree_dir)
 
 # training script
-script_dir = prefix.joinpath("code", "train", "lightgbm", "iris")
-script_name = "train-advanced.py"
+script_dir = prefix.joinpath("code")
+script_name = "train.py"
 
 # environment file
-environment_file = prefix.joinpath("environments", "lightgbm.txt")
+environment_file = prefix.joinpath("environments", "env.txt")
 
 # dataset
 ds = Dataset.File.from_files(
@@ -24,8 +24,8 @@ ds = Dataset.File.from_files(
 )
 
 # azure ml settings
-environment_name = "lightgbm"
-experiment_name = "lightgbm-template-workflow"
+environment_name = "template-env"
+experiment_name = "template-workflow"
 compute_target = "cpu-cluster"
 
 # create environment
