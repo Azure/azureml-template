@@ -65,7 +65,7 @@ In your GitHub repo, navigate to Settings > Secrets > New Secret. Name the secre
 
 ## Contents
 
-This example repo is structured for real ML projects. You can utilize the structure for automating the entire ML lifecycle on GitHub using AML.
+This template is structured for real ML projects. You can utilize the structure for automating the entire ML lifecycle on GitHub, using AML for central tracking and scaling up/out.
 
 |directory|description|
 |-|-|
