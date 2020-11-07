@@ -7,7 +7,7 @@ from azureml.core import ScriptRunConfig, Experiment, Environment, Dataset
 ws = Workspace.from_config()
 
 # setup path prefix
-prefix = Path("..")
+prefix = Path(__file__).parent.parent.absolute()
 
 # training script
 script_dir = prefix.joinpath("code")
