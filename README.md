@@ -79,8 +79,17 @@ This template is structured for real ML projects. You can utilize the structure 
 
 ## GitHub Actions
 
-Modify all actions and files for your scenario. By default:
+Modify all actions and files for your scenario.
+
+**Actions**:
 
 - [`.github/workflows/smoke.yml`](.github/workflows/smoke.yml) runs on every PR and push to `main` to check code format
 - [`.github/workflows/cleanup.yml`](.github/workflows/cleanup.yml) runs daily and can be used to cleanup AML resources
 - [`.github/workflows/run-workflows.yml`](.github/workflows/run-workflows.yml) runs a ml workflow every two hours and push/PR to `main`
+
+**Files**:
+
+- [`cleanup.py`](cleanup.py) can be modified for nightly workspace cleanup tasks
+- [`setup-workspace.py`](setup-workspace.py) can be modified for workspace and resource setup
+- [`code/train.py`](code/train.py) is the ML training script
+- [`workflows/default.py`](workflows/default.py) is the AML control code
