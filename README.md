@@ -93,3 +93,4 @@ Modify all actions and files for your scenario.
 - [`setup-workspace.py`](setup-workspace.py) can be modified for workspace and resource setup
 - [`code/train.py`](code/train.py) is the ML training script with mlflow tracking
 - [`workflows/default.py`](workflows/default.py) is the AML control code
+- [`environments/env.txt`](environments/env.txt) specifies required pip packages for the training script
