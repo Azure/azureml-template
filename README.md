@@ -81,6 +81,6 @@ This template is structured for real ML projects. You can utilize the structure 
 
 Modify all actions and files for your scenario. By default:
 
-- `[.github/workflows/smoke.yaml](.github/workflows/smoke.yaml]` runs on every PR and push to `main` to check code format
+- [`.github/workflows/smoke.yaml](.github/workflows/smoke.yaml)` runs on every PR and push to `main` to check code format
 - `run-workflows` runs the example ml workflow every two hours and push/PR to `main`
 - `cleanup` runs daily and can be used to cleanup AML resources
