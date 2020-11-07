@@ -1,6 +1,4 @@
 # imports
-import git
-
 from pathlib import Path
 from azureml.core import Workspace
 from azureml.core import ScriptRunConfig, Experiment, Environment, Dataset
@@ -8,8 +6,8 @@ from azureml.core import ScriptRunConfig, Experiment, Environment, Dataset
 # get workspace
 ws = Workspace.from_config()
 
-# get root of git repo
-prefix = Path(git.Repo(".", search_parent_directories=True).working_tree_dir)
+# setup path prefix
+prefix = Path(__file__).parent.parent.absolute()
 
 # training script
 script_dir = prefix.joinpath("code")
@@ -26,7 +24,7 @@ ds = Dataset.File.from_files(
 # azure ml settings
 environment_name = "template-env"
 experiment_name = "template-workflow"
-compute_target = "cpu-cluster"
+compute_name = "cpu-cluster"
 
 # create environment
 env = Environment.from_pip_requirements(environment_name, environment_file)
@@ -40,7 +38,7 @@ src = ScriptRunConfig(
     script=script_name,
     arguments=args,
     environment=env,
-    compute_target=compute_target,
+    compute_target=compute_name,
 )
 
 # submit job
