@@ -91,5 +91,5 @@ Modify all actions and files for your scenario.
 
 - [`cleanup.py`](cleanup.py) can be modified for nightly workspace cleanup tasks
 - [`setup-workspace.py`](setup-workspace.py) can be modified for workspace and resource setup
-- [`code/train.py`](code/train.py) is the ML training script
+- [`code/train.py`](code/train.py) is the ML training script with mlflow tracking
 - [`workflows/default.py`](workflows/default.py) is the AML control code
