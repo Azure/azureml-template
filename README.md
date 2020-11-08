@@ -34,7 +34,7 @@ First, export your subscription id as an environment variable:
 export ID=<your-subscription-id>
 ```
 
-Second, create the Azure Resource Group and requires resources:
+Second, create the Azure Resource Group and required resources:
 
 ```console
 python setup-workspace.py --subscription-id $ID
