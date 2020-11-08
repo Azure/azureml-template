@@ -1,4 +1,4 @@
-# Azure Machine Learning (AML) GitHub Template
+# Azure Machine Learning (AML) Template
 
 [![run-workflows-badge](https://github.com/Azure/azureml-template/workflows/run-workflows/badge.svg)](https://github.com/Azure/azureml-template/actions?query=workflow%3Arun-workflows)
 [![cleanup](https://github.com/Azure/azureml-template/workflows/cleanup/badge.svg)](https://github.com/Azure/azureml-template/actions?query=workflow%3Acleanup)
@@ -14,15 +14,17 @@ Welcome to the Azure Machine Learning (AML) template repository!
 2. Familiarity with Python and [Azure Machine Learning concepts](https://docs.microsoft.com/en-us/azure/machine-learning/concept-azure-machine-learning-architecture).
 3. A terminal and Python >=3.6,[\<3.9](https://pypi.org/project/azureml-core).
 
-## Installation
+## Getting started
 
-Clone this repository and install required packages:
+Click "Use this template" above and create a repository.
 
-```sh
-git clone https://github.com/Azure/azureml-template
-cd azureml-template
-pip install --upgrade -r requirements.txt
-```
+Follow the setup guide below to add your Azure credentials and create required Azure resources. At the end, you will have a repository with:
+
+- code format check on push/PR
+- nightly resource cleanup
+- toy LightGBM training workflow every 2 hours and push/PR
+
+You can then customize and adapt the repository for your ML project(s).
 
 ## Setup
 
@@ -32,7 +34,7 @@ First, export your subscription id as an environment variable:
 export ID=<your-subscription-id>
 ```
 
-Second, create the Azure Resource Group and requires resources:
+Second, create the Azure Resource Group and required resources:
 
 ```console
 python setup-workspace.py --subscription-id $ID
@@ -61,7 +63,7 @@ Copy the output json, which looks like this:
 }
 ```
 
-In your GitHub repo, navigate to Settings > Secrets > New Secret. Name the secret `AZ_CREDS` and paste the json output from above.
+In your repository, navigate to Settings > Secrets > New Secret. Name the secret `AZ_CREDS` and paste the json output from above.
 
 ## Contents
 
@@ -94,3 +96,8 @@ Modify all actions and files for your scenario.
 - [`code/train.py`](code/train.py) is the ML training script with mlflow tracking
 - [`workflows/default.py`](workflows/default.py) is the AML control code
 - [`environments/env.txt`](environments/env.txt) specifies required pip packages for the training script
+
+## Reference
+
+- [Azure Machine Learning Examples](https://github.com/Azure/azureml-examples)
+- [Azure Machine Learning Documentation](https://docs.microsoft.com/azure/machine-learning)
