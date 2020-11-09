@@ -64,7 +64,7 @@ In your repository, navigate to "Settings > Secrets > New Secret". Name the secr
 
 ## Contents
 
-You can utilize the structure for automating the entire ML lifecycle on GitHub, using AML for central tracking and scaling up/out on Azure compute.
+Adapt this template to automate the entire ML lifecycle on GitHub, using AML for centralized tracking and scaling up/out on Azure compute.
 
 |directory|description|
 |-|-|
@@ -78,7 +78,7 @@ You can utilize the structure for automating the entire ML lifecycle on GitHub, 
 
 ## GitHub Actions
 
-Modify all actions and files as needed.
+Modify all files as needed.
 
 **Actions**:
 
