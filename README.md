@@ -37,7 +37,7 @@ Second, create the Azure resource group and required AML resources:
 python setup-workspace.py --subscription-id $ID
 ```
 
-This will create a resource group named `azureml-template`, a workspace named `default`, and a cluster name `cpu-cluster`. Edit `setup-workspace.py` as needed. If you change the names, ensure you change corresponding names in the `.github/workflow` files and in the third step below.
+This will create a resource group named `azureml-template`, a workspace named `default`, and a cluster name `cpu-cluster`. Edit `setup-workspace.py` as needed. If you change the names, ensure you change corresponding names in the `.github/workflows` files and in the third step below.
 
 Third, create a service principal for the resource group:
 
