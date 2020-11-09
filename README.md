@@ -11,8 +11,7 @@ Welcome to the Azure Machine Learning (AML) template repository!
 ## Prerequisites
 
 1. An Azure subscription. If you don't have an Azure subscription, [create a free account](https://aka.ms/AMLFree) before you begin.
-2. Familiarity with Python and [Azure Machine Learning concepts](https://docs.microsoft.com/en-us/azure/machine-learning/concept-azure-machine-learning-architecture).
-3. A terminal and Python >=3.6,[\<3.9](https://pypi.org/project/azureml-core).
+2. A terminal and Python >=3.6,[\<3.9](https://pypi.org/project/azureml-core).
 
 ## Getting started
 
@@ -20,21 +19,21 @@ Click "Use this template" above and create a repository.
 
 Follow the setup guide below to add your Azure credentials and create required Azure resources. At the end, you will have a repository with:
 
+- simple LightGBM training workflow running every 2 hours and on push/PR
 - code format check on push/PR
-- nightly resource cleanup
-- toy LightGBM training workflow every 2 hours and push/PR
+- resource cleanup script running nightly
 
-You can then customize and adapt the repository for your ML project(s).
+You can then customize and adapt the repository for your ML project(s), managing the entire ML lifecycle using git.
 
 ## Setup
 
-First, export your subscription id as an environment variable:
+First, export your Azure subscription id as an environment variable:
 
 ```console
 export ID=<your-subscription-id>
 ```
 
-Second, create the Azure Resource Group and required resources:
+Second, create the Azure Resource Group and required AML resources:
 
 ```console
 python setup-workspace.py --subscription-id $ID
@@ -63,7 +62,7 @@ Copy the output json, which looks like this:
 }
 ```
 
-In your repository, navigate to Settings > Secrets > New Secret. Name the secret `AZ_CREDS` and paste the json output from above.
+In your repository, navigate to "Settings > Secrets > New Secret". Name the secret `AZ_CREDS` and paste the json output from above. This is used in the Azure login action in the GitHub Actions.
 
 ## Contents
 
