@@ -1,7 +1,6 @@
 # imports
 from pathlib import Path
-from azureml.core import Workspace
-from azureml.core import ScriptRunConfig, Experiment, Environment, Dataset
+from azureml.core import Workspace, ScriptRunConfig, Experiment, Environment, Dataset
 
 # get workspace
 ws = Workspace.from_config()
