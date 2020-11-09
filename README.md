@@ -78,7 +78,7 @@ You can utilize the structure for automating the entire ML lifecycle on GitHub, 
 
 ## GitHub Actions
 
-Modify all actions and files for your scenario.
+Modify all actions and files as needed.
 
 **Actions**:
 
