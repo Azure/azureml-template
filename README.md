@@ -23,8 +23,6 @@ Follow the setup guide below to add your Azure credentials and create required A
 - code format check on push/PR
 - resource cleanup script running nightly
 
-You can then customize and adapt the repository for your ML project(s), managing the entire ML lifecycle using git.
-
 ## Setup
 
 First, export your Azure subscription id as an environment variable:
@@ -33,13 +31,13 @@ First, export your Azure subscription id as an environment variable:
 export ID=<your-subscription-id>
 ```
 
-Second, create the Azure Resource Group and required AML resources:
+Second, create the Azure resource group and required AML resources:
 
 ```console
 python setup-workspace.py --subscription-id $ID
 ```
 
-where `$ID` is your subscription id. This will create a resource group named `azureml-template`, a workspace named `default`, and a cluster name `cpu-cluster`. Edit `setup-workspace.py` as needed. If you change the names, ensure you change corresponding names in the `.github/workflow` files.
+This will create a resource group named `azureml-template`, a workspace named `default`, and a cluster name `cpu-cluster`. Edit `setup-workspace.py` as needed. If you change the names, ensure you change corresponding names in the `.github/workflow` files and in the third step below.
 
 Third, create a service principal for the resource group:
 
@@ -62,11 +60,11 @@ Copy the output json, which looks like this:
 }
 ```
 
-In your repository, navigate to "Settings > Secrets > New Secret". Name the secret `AZ_CREDS` and paste the json output from above. This is used in the Azure login action in the GitHub Actions.
+In your repository, navigate to "Settings > Secrets > New Secret". Name the secret `AZ_CREDS` and paste the json output from above. This is used in the Azure login action in the GitHub Actions. If you use a different name for the secret, ensure you change the corresponding names in the `.github/workflow` files.
 
 ## Contents
 
-This template is structured for real ML projects. You can utilize the structure for automating the entire ML lifecycle on GitHub, using AML for central tracking and scaling up/out.
+You can utilize the structure for automating the entire ML lifecycle on GitHub, using AML for central tracking and scaling up/out on Azure compute.
 
 |directory|description|
 |-|-|
@@ -88,7 +86,7 @@ Modify all actions and files for your scenario.
 - [`.github/workflows/cleanup.yml`](.github/workflows/cleanup.yml) runs daily and can be used to cleanup AML resources
 - [`.github/workflows/run-workflows.yml`](.github/workflows/run-workflows.yml) runs a ml workflow every two hours and push/PR to `main`
 
-**Files**:
+**Other**:
 
 - [`cleanup.py`](cleanup.py) can be modified for nightly workspace cleanup tasks
 - [`setup-workspace.py`](setup-workspace.py) can be modified for workspace and resource setup
