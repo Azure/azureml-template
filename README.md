@@ -60,7 +60,7 @@ Copy the output json, which looks like this:
 }
 ```
 
-In your repository, navigate to "Settings > Secrets > New Secret". Name the secret `AZ_CREDS` and paste the json output from above. This is used in the Azure login action in the GitHub Actions. If you use a different name for the secret, ensure you change the corresponding names in the `.github/workflow` files.
+In your repository, navigate to "Settings > Secrets > New Secret". Name the secret `AZ_CREDS` and paste the json output from above. This is used in the Azure login action in the GitHub Actions. If you use a different name for the secret, ensure you change the corresponding names in the `.github/workflows` files.
 
 ## Contents
 
