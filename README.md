@@ -71,7 +71,7 @@ Adapt this template to automate the entire ML lifecycle on GitHub, using AML for
 |`.cloud`|cloud templates|
 |`.github`|GitHub specific files like Actions workflow yaml definitions and issue templates|
 |`notebooks`|interactive jupyter notebooks for iterative ML development|
-|`workflows`|self-contained directories of job(s) to be run|
+|`workflows`|self-contained directories of job/workflow to be run|
 
 ## GitHub Actions
 
@@ -88,9 +88,9 @@ Modify all files as needed.
 - [`requirements.txt`](requirements.txt) specifies required pip packages for GitHub actions
 - [`setup-workspace.py`](setup-workspace.py) can be modified for workspace and resource setup
 - [`cleanup.py`](cleanup.py) can be modified for nightly workspace cleanup tasks
-- [`workflows/basic/workflow.py`](workflows/basic/workflow.py) is the AML control code
+- [`workflows/basic/job.py`](workflows/basic/job.py) is the AML control code
 - [`workflows/basic/src/train.py`](workflows/basic/src/train.py) is the ML training script with mlflow tracking
-- [`workflows/basic/envs/requirements.txt`](workflows/basic/envs/requirements.txt) specifies required pip packages for the training script
+- [`workflows/basic/requirements.txt`](workflows/basic/requirements.txt) specifies required pip packages for the training script
 
 ## Reference
 
