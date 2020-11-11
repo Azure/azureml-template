@@ -13,7 +13,7 @@ script_dir = str(prefix.joinpath("src"))
 script_name = "train.py"
 
 # environment file
-environment_file = str(prefix.joinpath("envs", "requirements.txt"))
+environment_file = str(prefix.joinpath("requirements.txt"))
 
 # dataset
 ds = Dataset.File.from_files(
