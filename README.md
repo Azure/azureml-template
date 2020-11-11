@@ -95,4 +95,5 @@ Modify all files as needed.
 ## Reference
 
 - [Azure Machine Learning Examples](https://github.com/Azure/azureml-examples)
+- [Cheat Sheet, VSCode Snippets, and Tempaltes]
 - [Azure Machine Learning Documentation](https://docs.microsoft.com/azure/machine-learning)
