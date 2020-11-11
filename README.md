@@ -70,11 +70,8 @@ Adapt this template to automate the entire ML lifecycle on GitHub, using AML for
 |-|-|
 |`.cloud`|cloud templates|
 |`.github`|GitHub specific files like Actions workflow yaml definitions and issue templates|
-|`code`|ML code|
-|`environments`|environment definition files such as conda yaml, pip txt, or dockerfile|
-|`mlprojects`|mlflow project specifications|
 |`notebooks`|interactive jupyter notebooks for iterative ML development|
-|`workflows`|AML control plane specification (currently Python scripts) of job(s) to be run|
+|`workflows`|self-contained AML workflows of job(s) to be run|
 
 ## GitHub Actions
 
@@ -88,11 +85,12 @@ Modify all files as needed.
 
 **Other**:
 
-- [`cleanup.py`](cleanup.py) can be modified for nightly workspace cleanup tasks
+- [`requirements.txt`](requirements.txt) specifies required pip packages for GitHub actions
 - [`setup-workspace.py`](setup-workspace.py) can be modified for workspace and resource setup
-- [`code/train.py`](code/train.py) is the ML training script with mlflow tracking
-- [`workflows/default.py`](workflows/default.py) is the AML control code
-- [`environments/env.txt`](environments/env.txt) specifies required pip packages for the training script
+- [`cleanup.py`](cleanup.py) can be modified for nightly workspace cleanup tasks
+- [`workflows/workflow.py`](workflows/workflow.py) is the AML control code
+- [`workflows/src/train.py`](workflows/src/train.py) is the ML training script with mlflow tracking
+- [`workflows/envs/requirements.txt`](workflows/envs/requirements.txt) specifies required pip packages for the training script
 
 ## Reference
 
