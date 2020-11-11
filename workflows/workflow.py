@@ -6,14 +6,14 @@ from azureml.core import Workspace, ScriptRunConfig, Experiment, Environment, Da
 ws = Workspace.from_config()
 
 # setup path prefix
-prefix = Path(__file__).parent.parent.absolute()
+prefix = Path(__file__).parent
 
 # training script
-script_dir = prefix.joinpath("code")
+script_dir = prefix.joinpath("src")
 script_name = "train.py"
 
 # environment file
-environment_file = prefix.joinpath("environments", "env.txt")
+environment_file = prefix.joinpath("envs", "requirements.txt")
 
 # dataset
 ds = Dataset.File.from_files(
