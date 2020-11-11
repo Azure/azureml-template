@@ -86,10 +86,10 @@ Modify all files as needed.
 **Other**:
 
 - [`requirements.txt`](requirements.txt) specifies required pip packages for GitHub actions
-- [`cleanup.py`](cleanup.py) can be modified for nightly workspace cleanup tasks
 - [`setup-workspace.py`](setup-workspace.py) can be modified for workspace and resource setup
-- [`workflows/src/train.py`](workflows/src/train.py) is the ML training script with mlflow tracking
+- [`cleanup.py`](cleanup.py) can be modified for nightly workspace cleanup tasks
 - [`workflows/workflow.py`](workflows/workflow.py) is the AML control code
+- [`workflows/src/train.py`](workflows/src/train.py) is the ML training script with mlflow tracking
 - [`workflows/envs/requirements.txt`](workflows/envs/requirements.txt) specifies required pip packages for the training script
 
 ## Reference
