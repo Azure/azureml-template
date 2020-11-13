@@ -6,7 +6,6 @@ from azureml.core.compute import ComputeTarget, AmlCompute, AksCompute
 
 # setup argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("--config", type=str, default="")
 parser.add_argument("--subscription-id", type=str, default=None)
 parser.add_argument("--workspace-name", type=str, default="default")
 parser.add_argument("--resource-group", type=str, default="azureml-template")
