@@ -3,7 +3,7 @@ from pathlib import Path
 from azureml.core import Workspace, ScriptRunConfig, Experiment, Environment, Dataset
 
 # constants
-compute_name = "cpu-cluster"  # use "local" for local training
+compute_name = "cpu-cluster"  # use "local" for local execution
 entry_script = "train.py"
 environment_name = "myenv-template"
 experiment_name = "template-workflow-base"
