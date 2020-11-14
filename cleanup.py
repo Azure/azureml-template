@@ -4,11 +4,10 @@ from azureml.core import Workspace
 
 # setup argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("--config", type=str, default="")
 args = parser.parse_args()
 
 # get workspace
-ws = Workspace.from_config(args.config)
+ws = Workspace.from_config()
 
 # process webservices
 for webservice in ws.webservices:
