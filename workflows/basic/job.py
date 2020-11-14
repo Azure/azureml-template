@@ -2,6 +2,12 @@
 from pathlib import Path
 from azureml.core import Workspace, ScriptRunConfig, Experiment, Environment, Dataset
 
+# constants
+environment_name = "myenv-template"
+experiment_name = "template-workflow-base"
+compute_name = "cpu-cluster"
+data_uri = "https://azuremlexamples.blob.core.windows.net/datasets/iris.csv"
+
 # get workspace
 ws = Workspace.from_config()
 
@@ -16,14 +22,7 @@ script_name = "train.py"
 environment_file = str(prefix.joinpath("requirements.txt"))
 
 # dataset
-ds = Dataset.File.from_files(
-    "https://azuremlexamples.blob.core.windows.net/datasets/iris.csv"
-)
-
-# azure ml settings
-environment_name = "template-env"
-experiment_name = "template-workflow"
-compute_name = "cpu-cluster"
+ds = Dataset.File.from_files(data_uri)
 
 # create environment
 env = Environment.from_pip_requirements(environment_name, environment_file)
