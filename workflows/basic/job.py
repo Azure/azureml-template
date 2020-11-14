@@ -31,7 +31,7 @@ args = ["--data-dir", ds.as_mount()]
 # create a job configuration
 src = ScriptRunConfig(
     source_directory=script_dir,
-    script=script_name,
+    script=entry_script,
     arguments=args,
     environment=env,
     compute_target=compute_name,
