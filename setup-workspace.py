@@ -12,7 +12,7 @@ parser.add_argument("--resource-group", type=str, default="azureml-template")
 parser.add_argument("--location", type=str, default="eastus")
 args = parser.parse_args()
 
-# constants, variables, parameters, etc.
+# define aml compute target(s) to create
 amlcomputes = {
     "cpu-cluster": {
         "vm_size": "STANDARD_DS3_V2",
@@ -22,7 +22,7 @@ amlcomputes = {
     }
 }
 
-# create Workspace
+# create workspace
 ws = Workspace.create(
     args.workspace_name,
     subscription_id=args.subscription_id,
