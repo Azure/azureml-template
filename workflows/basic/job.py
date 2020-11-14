@@ -2,7 +2,7 @@
 from pathlib import Path
 from azureml.core import Workspace, ScriptRunConfig, Experiment, Environment, Dataset
 
-# constants 
+# constants
 environment_name = "myenv-template"
 experiment_name = "template-workflow-base"
 compute_name = "cpu-cluster"
