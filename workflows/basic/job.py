@@ -4,20 +4,20 @@ from azureml.core import Workspace, ScriptRunConfig, Experiment, Environment, Da
 
 # constants
 compute_name = "cpu-cluster"  # use "local" for local execution
+source_dir = "src"
 entry_script = "train.py"
 environment_name = "myenv-template"
+environment_file = "requirements.txt"
 experiment_name = "template-workflow-base"
 data_uri = "https://azuremlexamples.blob.core.windows.net/datasets/iris.csv"
 
+# convert to relative paths
+prefix = Path(__file__).parent
+source_dir = str(prefix.joinpath(source_dir))
+environment_file = str(prefix.joinpath(environment_file))
+
 # get workspace
 ws = Workspace.from_config()
-
-# setup path prefix
-prefix = Path(__file__).parent
-
-# get relative paths
-script_dir = str(prefix.joinpath("src"))
-environment_file = str(prefix.joinpath("requirements.txt"))
 
 # create dataset
 ds = Dataset.File.from_files(data_uri)
@@ -30,7 +30,7 @@ args = ["--data-dir", ds.as_mount()]
 
 # create a job configuration
 src = ScriptRunConfig(
-    source_directory=script_dir,
+    source_directory=source_dir,
     script=entry_script,
     arguments=args,
     environment=env,
